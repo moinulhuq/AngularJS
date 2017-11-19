@@ -118,3 +118,34 @@
 	<p>The third result is <span ng-bind="points[2]"></span></p>
 
 </div>
+
+
+13. "ng-repeat" used for repeating an HTML elements
+
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+
+  <ul>
+    <li ng-repeat="x in names">
+      {{ x }}
+    </li>
+  </ul>
+
+</div>
+
+
+14. "ng-repeat" directive used on an array of objects
+
+<div ng-app="" ng-init="names=[
+				{name:'Jani',country:'Norway'},
+				{name:'Hege',country:'Sweden'},
+				{name:'Kai',country:'Denmark'}
+			      ]
+">
+
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+
+</div>
