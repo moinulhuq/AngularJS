@@ -144,3 +144,27 @@ angular.module('myApp', []).controller('namesCtrl', function($scope) {
         {name:'Kai',country:'Denmark'}
     ];
 });
+
+9. AngularJS MVC
+
+	View == HTML
+	Model == data available for the current view (here $scope is model)
+	Controller == JavaScript function that makes/changes/removes/controls the data
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+	<ul>
+	    <li ng-repeat="x in names">{{x}}</li>
+	</ul>
+
+</div>
+
+<script>
+
+	var app = angular.module('myApp', []);
+
+	app.controller('myCtrl', function($scope) {
+	    $scope.names = ["Emil", "Tobias", "Linus"];
+	});
+
+</script>
