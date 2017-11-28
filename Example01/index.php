@@ -149,3 +149,40 @@
 </ul>
 
 </div>
+
+
+15. "ng-repeat" directive using table with index number
+
+<div ng-app="" ng-init="names=[
+				{name:'Jani',country:'Norway'},
+				{name:'Hege',country:'Sweden'},
+				{name:'Kai',country:'Denmark'}
+			      ]
+">
+
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ $index + 1 }}</td>
+    <td>{{ x.name }}</td>
+    <td>{{ x.country }}</td>
+  </tr>
+</table>
+
+	
+16. "ng-repeat" directive using table with "$even" and "$odd"
+
+<div ng-app="" ng-init="names=[
+				{name:'Jani',country:'Norway'},
+				{name:'Hege',country:'Sweden'},
+				{name:'Kai',country:'Denmark'}
+			      ]
+">
+
+<table>
+  <tr ng-repeat="x in names">
+    <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Name }}</td>
+    <td ng-if="$even">{{ x.Name }}</td>
+    <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Country }}</td>
+    <td ng-if="$even">{{ x.Country }}</td>
+  </tr>
+</table>
