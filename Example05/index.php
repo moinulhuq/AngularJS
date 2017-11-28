@@ -102,3 +102,45 @@ index.php
 	});
 
 </script>
+
+
+4. "$http" service ".get()" with php mysql
+
+customers_mysql.php
+--------------
+<?php
+
+	$conn = new mysqli("localhost", "root", "root", "customerdb");
+
+	$result = $conn->query("SELECT Name, City, Country FROM customers");
+
+	$outp = $result->fetch_all(MYSQLI_ASSOC);
+
+	echo '{"records":'.json_encode($outp).'}';
+
+?>
+
+
+index.php
+---------
+<div ng-app="myApp" ng-controller="customersCtrl">
+ 
+	<table>
+	  <tr ng-repeat="x in names">
+	    <td>{{ x.Name }}</td>
+	    <td>{{ x.Country }}</td>
+	  </tr>
+	</table>
+ 
+</div>
+ 
+<script>
+
+	var app = angular.module('myApp', []);
+
+	app.controller('customersCtrl', function($scope, $http) {
+	   $http.get("customers_mysql.php")
+	   .then(function (response) {	$scope.names = response.data.records });
+	});
+
+</script>
