@@ -186,3 +186,152 @@
     <td ng-if="$even">{{ x.Country }}</td>
   </tr>
 </table>
+	
+	
+17. Creating a Select Box Using "ng-options"
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <select ng-model="selectedName" ng-options="x for x in names">
+  </select>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+      $scope.names = ["Emil", "Tobias", "Linus"];
+  });
+
+</script>
+
+
+18. Creating a Select Box Using "ng-repeat"
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <select>
+    <option ng-repeat="x in names">{{x}}</option>
+  </select>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+      $scope.names = ["Emil", "Tobias", "Linus"];
+  });
+
+</script>
+
+
+19. Creating a Select Box Using "ng-repeat" where datasource is object's array.
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <select ng-model="selectedCar">
+    <option ng-repeat="x in cars" value="{{x.model}}">{{x.model}}</option>
+  </select>
+
+  <h1>You selected: {{selectedCar}}</h1>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+  
+  app.controller('myCtrl', function($scope) {
+      $scope.cars = [
+          {model : "Ford Mustang", color : "red"},
+          {model : "Fiat 500", color : "white"},
+          {model : "Volvo XC90", color : "black"}
+      ];
+  });
+
+</script>
+
+
+20. Creating a Select Box Using "ng-options" where datasource is object's array.
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <select ng-model="selectedCar" ng-options="x.model for x in cars">
+  </select>
+
+  <h1>You selected: {{selectedCar.model}}</h1>
+  <p>Its color is: {{selectedCar.color}}</p>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+      $scope.cars = [
+          {model : "Ford Mustang", color : "red"},
+          {model : "Fiat 500", color : "white"},
+          {model : "Volvo XC90", color : "black"}
+      ];
+  });
+
+</script>
+
+	
+21. Creating a Select Box Using "ng-options" where datasource is object. Here x represents the key, and y represents the value.
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <select ng-model="selectedCar" ng-options="x for (x, y) in cars">
+  </select>
+
+  <h1>You selected: {{selectedCar}}</h1>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+      $scope.cars = {
+          car01 : "Ford",
+          car02 : "Fiat",
+          car03 : "Volvo"
+      }
+  });
+
+</script>
+
+	
+22. Creating a Select Box Using "ng-options" where datasource is object inside object. Here x represents the key, and y represents the value.
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
+  </select>
+
+  <h1>You selected: {{selectedCar.brand}}</h1>
+  <h2>Model: {{selectedCar.model}}</h2>
+  <h3>Color: {{selectedCar.color}}</h3>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+  
+  app.controller('myCtrl', function($scope) {
+      $scope.cars = {
+          car01 : {brand : "Ford", model : "Mustang", color : "red"},
+          car02 : {brand : "Fiat", model : "500", color : "white"},
+          car03 : {brand : "Volvo", model : "XC90", color : "black"}
+      }
+  });
+
+</script>
