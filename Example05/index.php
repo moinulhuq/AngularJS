@@ -1,4 +1,4 @@
-#1. AngularJS "$http" service makes a request to the server, and returns a response.
+1. AngularJS "$http" service makes a request to the server, and returns a response.
 
 welcome.htm
 -----------
