@@ -135,6 +135,54 @@
 </div>
 
 
+14. "ng-mousemove" directive example
+
+<div ng-app="" ng-init="count = 0">
+
+  <h1 ng-mousemove="count = count + 1">Mouse Over Me!</h1>
+
+  <h2>{{ count }}</h2>
+
+</div>
+
+
+14. "ng-click" directive example
+
+<div ng-app="" ng-init="count = 0">
+
+  <button ng-click="count = count + 1">Click Me!</button>
+
+  <h2>{{ count }}</h2>
+
+</div>
+
+
+15. Toggle, True/False
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <div ng-show="showMe">
+      <h1>Hello AngularJS</h1>
+  </div>
+
+  <button ng-click="myFunc()">Click Me!</button>
+
+</div>
+
+<script>
+
+  var app = angular.module('myApp', []);
+
+  app.controller('myCtrl', function($scope) {
+      $scope.showMe = false;
+      $scope.myFunc = function() {
+          $scope.showMe = true;
+      }
+  });
+
+</script>
+
+
 14. AngularJS Objects
 
 <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
