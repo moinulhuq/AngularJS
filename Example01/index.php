@@ -98,7 +98,44 @@
 </div>
 
 
-11. AngularJS Objects
+11. "ng-hide" directive hides or shows an HTML element.
+
+<div ng-app="">
+
+  <p ng-hide="true">I am not visible.</p>
+
+  <p ng-hide="false">I am visible.</p>
+
+</div>
+
+
+12. "ng-show" directive shows or hides an HTML element.
+
+<div ng-app="" ng-init="hour=13">
+
+  <p ng-show="true">I am visible.</p>
+
+  <p ng-show="false">I am not visible.</p>
+
+  <p ng-show="hour > 12">I am visible.</p>
+
+</div> 
+
+
+13. "ng-disabled" to the disabled attribute of HTML elements.
+
+<div ng-app="" ng-init="mySwitch=true">
+  
+  <button ng-disabled="mySwitch">Click Me!</button>
+  
+  <input type="checkbox" ng-model="mySwitch"/>Button
+  
+  {{ mySwitch }}
+
+</div>
+
+
+14. AngularJS Objects
 
 <div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
 
@@ -109,7 +146,7 @@
 </div>
 
 
-12. AngularJS Arrays
+15. AngularJS Arrays
 
 <div ng-app="" ng-init="points=[1,15,19,2,40]">
 
@@ -120,7 +157,7 @@
 </div>
 
 
-13. "ng-repeat" used for repeating an HTML elements
+16. "ng-repeat" used for repeating an HTML elements
 
 <div ng-app="" ng-init="names=['Jani','Hege','Kai']">
 
@@ -133,7 +170,7 @@
 </div>
 
 
-14. "ng-repeat" directive used on an array of objects
+17. "ng-repeat" directive used on an array of objects
 
 <div ng-app="" ng-init="names=[
 				{name:'Jani',country:'Norway'},
@@ -151,7 +188,7 @@
 </div>
 
 
-15. "ng-repeat" directive using table with index number
+18. "ng-repeat" directive using table with index number
 
 <div ng-app="" ng-init="names=[
 				{name:'Jani',country:'Norway'},
@@ -169,7 +206,7 @@
 </table>
 
 	
-16. "ng-repeat" directive using table with "$even" and "$odd"
+19. "ng-repeat" directive using table with "$even" and "$odd"
 
 <div ng-app="" ng-init="names=[
 				{name:'Jani',country:'Norway'},
@@ -188,7 +225,7 @@
 </table>
 	
 	
-17. Creating a Select Box Using "ng-options"
+20. Creating a Select Box Using "ng-options"
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
@@ -208,7 +245,7 @@
 </script>
 
 
-18. Creating a Select Box Using "ng-repeat"
+21. Creating a Select Box Using "ng-repeat"
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
@@ -229,7 +266,7 @@
 </script>
 
 
-19. Creating a Select Box Using "ng-repeat" where datasource is object's array.
+22. Creating a Select Box Using "ng-repeat" where datasource is object's array.
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
@@ -256,7 +293,7 @@
 </script>
 
 
-20. Creating a Select Box Using "ng-options" where datasource is object's array.
+23. Creating a Select Box Using "ng-options" where datasource is object's array.
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
@@ -283,7 +320,7 @@
 </script>
 
 	
-21. Creating a Select Box Using "ng-options" where datasource is object. Here x represents the key, and y represents the value.
+24. Creating a Select Box Using "ng-options" where datasource is object. Here x represents the key, and y represents the value.
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
@@ -309,7 +346,7 @@
 </script>
 
 	
-22. Creating a Select Box Using "ng-options" where datasource is object inside object. Here x represents the key, and y represents the value.
+25. Creating a Select Box Using "ng-options" where datasource is object inside object. Here x represents the key, and y represents the value.
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
